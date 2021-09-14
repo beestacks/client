@@ -11,10 +11,10 @@ export class SidebarComponent implements OnInit {
   items: MenuItem[];
 
   constructor(private translate: TranslateService) {}
-  ngOnInit() {
+  async ngOnInit() {
     this.items = [
       {
-        label: this.translate.instant('sidebar.dashboard'),
+        label: await this.translate.get('sidebar.dashboard').toPromise(),
         routerLink: '/dashboard'
       },
       {
