@@ -1,4 +1,7 @@
 {
+  "sidebar": {
+    "dashboard": "Dashboard"
+  },
   "PAGES": {
       "HOME": {
           "TITLE": "App works !",

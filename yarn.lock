@@ -302,6 +302,13 @@
   dependencies:
     eslint-scope "^5.1.0"
 
+"@angular/animations@12.2.5":
+  version "12.2.5"
+  resolved "https://registry.npmjs.org/@angular/animations/-/animations-12.2.5.tgz#b5b534f9f6ba65d1249d937bbad01de6cc9adcac"
+  integrity sha512-a8jRimgrATq2CS95SO5yjsZo2d4FbfmN2SrPu6lZjWIdstXm4KQSJFslyxovhoUjGNu5cZgzfXTvWkXRxJYCxA==
+  dependencies:
+    tslib "^2.2.0"
+
 "@angular/cli@12.1.2":
   version "12.1.2"
   resolved "https://registry.npmjs.org/@angular/cli/-/cli-12.1.2.tgz#31bedb867bbfec5cf49b18b0666077c25f8a8e41"
