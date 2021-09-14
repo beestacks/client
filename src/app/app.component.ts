@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { ElectronService } from './core/services';
+import { Component, OnInit } from '@angular/core';
+import { ConfigService, ElectronService } from './core/services';
 import { TranslateService } from '@ngx-translate/core';
 import { APP_CONFIG } from '../environments/environment';
 
@@ -8,10 +8,11 @@ import { APP_CONFIG } from '../environments/environment';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   constructor(
     private electronService: ElectronService,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private config: ConfigService,
   ) {
     this.translate.setDefaultLang('en');
     console.log('APP_CONFIG', APP_CONFIG);
@@ -24,5 +25,10 @@ export class AppComponent {
     } else {
       console.log('Run in browser');
     }
+  }
+
+  ngOnInit() {
+    this.config.addIP('http://localhost:3000');
+    console.log(this.config.hosts);
   }
 }
