@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
     private config: ConfigService,
   ) {
     this.translate.setDefaultLang('zh');
+    this.translate.use('zh');
     console.log('APP_CONFIG', APP_CONFIG);
 
     if (electronService.isElectron) {

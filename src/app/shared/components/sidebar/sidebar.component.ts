@@ -18,12 +18,8 @@ export class SidebarComponent implements OnInit {
         routerLink: '/dashboard'
       },
       {
-        label: 'Edit',
-        icon: 'pi pi-fw pi-pencil',
-        items: [
-          { label: 'Delete', icon: 'pi pi-fw pi-trash' },
-          { label: 'Refresh', icon: 'pi pi-fw pi-refresh' },
-        ],
+        label: 'home',
+        routerLink: '/home',
       },
       {
         label: 'Help',

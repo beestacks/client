@@ -45,19 +45,19 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: Install Dependencies
-      run: npm i
+      run: yarn install
     - name: Check lint
-      run: npm run lint
+      run: yarn run lint
     - name: Build the app
-      run: npm run electron:build
+      run: yarn run electron:build
 
-    - name: Run headless unit test
-      uses: GabrielBB/xvfb-action@v1
-      with:
-        run: npm test
+    # - name: Run headless unit test
+    #   uses: GabrielBB/xvfb-action@v1
+    #   with:
+    #     run: npm test
 
-    - name: Run headless e2e test
-      uses: GabrielBB/xvfb-action@v1
-      with:
-        run: npm run e2e
+    # - name: Run headless e2e test
+    #   uses: GabrielBB/xvfb-action@v1
+    #   with:
+    #     run: npm run e2e
 
