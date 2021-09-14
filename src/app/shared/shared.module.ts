@@ -12,6 +12,6 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 @NgModule({
   declarations: [PageNotFoundComponent, WebviewDirective, NavbarComponent, SidebarComponent],
   imports: [CommonModule, TranslateModule, FormsModule, MenubarModule],
-  exports: [TranslateModule, WebviewDirective, FormsModule, MenubarModule, NavbarComponent]
+  exports: [TranslateModule, WebviewDirective, FormsModule, MenubarModule, NavbarComponent, SidebarComponent]
 })
 export class SharedModule {}
