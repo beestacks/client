@@ -2,13 +2,14 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PageNotFoundComponent } from './shared/components';
 
-import { HomeRoutingModule } from './home/home-routing.module';
-import { DetailRoutingModule } from './detail/detail-routing.module';
+import { HomeRoutingModule } from './pages/home/home.routing';
+import { DashboardRoutingModule } from './pages/dashboard/dashboard.routing';
+import { DetailRoutingModule } from './pages/detail/detail.routing';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'dashboard',
     pathMatch: 'full'
   },
   {
@@ -21,6 +22,7 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' }),
     HomeRoutingModule,
+    DashboardRoutingModule,
     DetailRoutingModule
   ],
   exports: [RouterModule]
