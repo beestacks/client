@@ -13,12 +13,4 @@ interface SidebarItem {
 })
 export class SidebarComponent {
   @Input() items: SidebarItem[] = [];
-  constructor(private router: Router) { }
-  get url() {
-    return this.router.url.split('/').reverse()[0];
-  }
-  check() {
-    console.log(this.url);
-
-  }
 }

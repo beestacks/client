@@ -8,11 +8,7 @@
   <hr />
   <ul class="nav nav-pills flex-column mb-auto">
     <li *ngFor="let item of items">
-      <a
-        [routerLink]="item.route"
-        class="nav-link"
-        [ngClass]="url === item.route ? 'active' : 'text-white'"
-      >
+      <a [routerLink]="item.route" class="nav-link text-white" routerLinkActive="active">
         <i class="bi" [ngClass]="item.icon"></i>&nbsp;&nbsp;
         {{ item.name }}
       </a>
