@@ -1,4 +1,22 @@
-<div>
-  <h1>BeeStack</h1>
-  <p-panelMenu [model]="items" [multiple]="false"></p-panelMenu>
+<div id="sidebar" class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark">
+  <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+    <svg class="bi me-2" width="40" height="32">
+      <use xlink:href="#bootstrap" />
+    </svg>
+    <span class="fs-4">BeeStack</span>
+  </a>
+  <hr />
+  <ul class="nav nav-pills flex-column mb-auto">
+    <li *ngFor="let item of items">
+      <a
+        [routerLink]="item.route"
+        class="nav-link"
+        [ngClass]="url === item.route ? 'active' : 'text-white'"
+      >
+        <i class="bi" [ngClass]="item.icon"></i>&nbsp;&nbsp;
+        {{ item.name }}
+      </a>
+    </li>
+  </ul>
+  <hr />
 </div>

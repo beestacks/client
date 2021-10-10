@@ -1,10 +1,10 @@
 $navbar_height: 3.625rem;
-$sidebar_width: 10rem;
+$sidebar_width: 15%;
 
 #container {
   position: absolute;
   left: $sidebar_width;
   top: $navbar_height;
-  width: calc(100% - #{$sidebar_width});
+  width: calc(85%);
   height: calc(100% - #{$navbar_height});
 }
