@@ -9,6 +9,9 @@
 *.js     text
 *.ts     text
 *.sql    text
+*.png    binary
+*.ico    binary
+*.icns   binary
 
 *.csproj text merge=union
 *.sln    text merge=union eol=crlf
