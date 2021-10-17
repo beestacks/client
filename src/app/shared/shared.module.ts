@@ -15,6 +15,7 @@ import { GridsterModule } from 'angular-gridster2';
 
 @NgModule({
   declarations: [PageNotFoundComponent, WebviewDirective, NavbarComponent, SidebarComponent],
+  providers: [],
   imports: [CommonModule, TranslateModule, FormsModule, MenubarModule, PanelMenuModule],
   exports: [
     TranslateModule,

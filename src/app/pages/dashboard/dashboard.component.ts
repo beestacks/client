@@ -1,5 +1,7 @@
 import {ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {CompactType, GridsterConfig, GridsterItem, GridType} from 'angular-gridster2';
+import { ConfigService } from '@config';
+
 
 
 @Component({
@@ -13,7 +15,13 @@ export class DashboardComponent implements OnInit {
   options: GridsterConfig;
   dashboard: Array<GridsterItem>;
 
+  constructor(
+    private config: ConfigService
+  ){}
+
   ngOnInit(): void {
+    console.log(this.config.theme);
+
     this.options = {
       gridType: GridType.Fit,
       compactType: CompactType.None,
