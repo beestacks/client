@@ -9,6 +9,8 @@ import { FormsModule } from '@angular/forms';
 import { MenubarModule } from 'primeng/menubar';
 import { PanelMenuModule } from 'primeng/panelmenu';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { ChartModule } from 'primeng/chart';
 
 @NgModule({
   declarations: [PageNotFoundComponent, WebviewDirective, NavbarComponent, SidebarComponent],
@@ -21,6 +23,8 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     PanelMenuModule,
     NavbarComponent,
     SidebarComponent,
+    DragDropModule,
+    ChartModule
   ],
 })
 export class SharedModule {}
