@@ -1,9 +1,4 @@
-<div cdkDropList cdkDropListOrientation="horizontal" class="example-list" (cdkDropListDropped)="drop($event)">
-  <div class="example-box" *ngFor="let timePeriod of timePeriods" cdkDrag>
-    <div class="card">
-      <h5>Basic</h5>
-      <p-chart type="line" [data]="basicData" [options]="basicOptions"></p-chart>
-    </div>
-  </div>
-
-</div>
+<gridster [options]="options">
+  <gridster-item [item]="item" *ngFor="let item of dashboard">
+  </gridster-item>
+</gridster>

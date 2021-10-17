@@ -11,6 +11,7 @@ import { PanelMenuModule } from 'primeng/panelmenu';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ChartModule } from 'primeng/chart';
+import { GridsterModule } from 'angular-gridster2';
 
 @NgModule({
   declarations: [PageNotFoundComponent, WebviewDirective, NavbarComponent, SidebarComponent],
@@ -24,7 +25,8 @@ import { ChartModule } from 'primeng/chart';
     NavbarComponent,
     SidebarComponent,
     DragDropModule,
-    ChartModule
+    ChartModule,
+    GridsterModule
   ],
 })
 export class SharedModule {}

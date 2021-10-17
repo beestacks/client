@@ -1,63 +1,63 @@
-import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
-import { Component, OnInit } from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {CompactType, GridsterConfig, GridsterItem, GridType} from 'angular-gridster2';
+
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None
 })
-export class DashboardComponent {
-  timePeriods = ['Bronze age','Bronze age','Bronze age', 'Iron age', 'Middle ages', 'Early modern period', 'Long nineteenth century'];
+export class DashboardComponent implements OnInit {
+  options: GridsterConfig;
+  dashboard: Array<GridsterItem>;
 
-  basicData = {
-    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-    datasets: [
-      {
-        label: 'First Dataset',
-        data: [65, 59, 80, 81, 56, 55, 40],
-        fill: false,
-        borderColor: '#42A5F5',
-        tension: 0.4,
+  ngOnInit(): void {
+    this.options = {
+      gridType: GridType.Fit,
+      compactType: CompactType.None,
+      minCols: 5,
+      minRows: 5,
+      maxCols: 5,
+      maxRows: 5,
+      pushItems: true,
+      draggable: {
+        enabled: true
       },
-      {
-        label: 'Second Dataset',
-        data: [28, 48, 40, 19, 86, 27, 90],
-        fill: false,
-        borderColor: '#FFA726',
-        tension: 0.4,
-      },
-    ],
-  };
+      resizable: {
+        enabled: true
+      }
+    };
 
-  basicOptions = {
-    plugins: {
-      legend: {
-        labels: {
-          color: '#ebedef',
-        },
-      },
-    },
-    scales: {
-      x: {
-        ticks: {
-          color: '#ebedef',
-        },
-        grid: {
-          color: 'rgba(255,255,255,0.2)',
-        },
-      },
-      y: {
-        ticks: {
-          color: '#ebedef',
-        },
-        grid: {
-          color: 'rgba(255,255,255,0.2)',
-        },
-      },
-    },
-  };
+    this.dashboard = [
+      {cols: 2, rows: 1, y: 0, x: 0},
+      {cols: 2, rows: 2, y: 0, x: 2},
+      {cols: 1, rows: 1, y: 0, x: 4},
+      {cols: 3, rows: 2, y: 1, x: 4},
+      {cols: 1, rows: 1, y: 4, x: 5},
+      {cols: 1, rows: 1, y: 2, x: 1},
+      {cols: 2, rows: 2, y: 5, x: 5},
+      {cols: 2, rows: 2, y: 3, x: 2},
+      {cols: 2, rows: 1, y: 2, x: 2},
+      {cols: 1, rows: 1, y: 3, x: 4},
+      {cols: 1, rows: 1, y: 0, x: 6}
+    ];
+  }
 
-  drop(event: any) {
-    moveItemInArray(this.timePeriods, event.previousIndex, event.currentIndex);
+  changedOptions(): void {
+    if (this.options.api && this.options.api.optionsChanged) {
+      this.options.api.optionsChanged();
+    }
+  }
+
+  removeItem($event: MouseEvent | TouchEvent, item): void {
+    $event.preventDefault();
+    $event.stopPropagation();
+    this.dashboard.splice(this.dashboard.indexOf(item), 1);
+  }
+
+  addItem(): void {
+    this.dashboard.push({x: 0, y: 0, cols: 1, rows: 1});
   }
 }

@@ -1,0 +1,8 @@
+// 顶部导航条高度
+$navbar_height: 3.625rem;
+
+// 侧边栏宽度
+$sidebar_width: 15rem;
+
+// 内容区域宽度
+$container_width: calc(100% - #{$sidebar_width});
