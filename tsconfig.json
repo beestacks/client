@@ -1,6 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "baseUrl": ".",
     "outDir": "./dist/out-tsc",
     "module": "es2020",
     "sourceMap": true,
@@ -20,7 +21,9 @@
       "dom"
     ],
     "paths": {
-      "components": ["./src/app/shared/components"]
+      "@components": ["src/app/shared/components"],
+      "@config": ["src/app/core/services/client/config.service"],
+      "@interfaces": ["src/app/shared/interfaces"]
     }
   },
   "angularCompilerOptions": {

@@ -309,6 +309,15 @@
   dependencies:
     tslib "^2.2.0"
 
+"@angular/cdk@12.2.10":
+  version "12.2.10"
+  resolved "https://registry.npmmirror.com/@angular/cdk/download/@angular/cdk-12.2.10.tgz#48782cd812efabf34def594d80c17fcfc24fe270"
+  integrity sha1-SHgs2BLvq/NN71lNgMF/z8JP4nA=
+  dependencies:
+    tslib "^2.2.0"
+  optionalDependencies:
+    parse5 "^5.0.0"
+
 "@angular/cli@12.1.2":
   version "12.1.2"
   resolved "https://registry.npmjs.org/@angular/cli/-/cli-12.1.2.tgz#31bedb867bbfec5cf49b18b0666077c25f8a8e41"
@@ -379,6 +388,13 @@
   version "12.1.2"
   resolved "https://registry.npmjs.org/@angular/forms/-/forms-12.1.2.tgz#92ac2cc88f6c007aa5121d9a64a027d1fdc6b97f"
   integrity sha512-cJ8zoaQpOtjTwPc0ObH6qXM0k9MWl+8eGL3jDtf01n0ByZXWFZ+2oQHmU64rO8sJntUR8LPvbXFJRMNd0ZpdsQ==
+  dependencies:
+    tslib "^2.2.0"
+
+"@angular/material@12.2.10":
+  version "12.2.10"
+  resolved "https://registry.npmmirror.com/@angular/material/download/@angular/material-12.2.10.tgz#0bccc42b186be2484efa5d986f239cef9f638628"
+  integrity sha1-C8zEKxhr4khO+l2YbyOc759jhig=
   dependencies:
     tslib "^2.2.0"
 
@@ -3609,6 +3625,11 @@ chardet@^0.7.0:
   version "0.7.0"
   resolved "https://registry.npmjs.org/chardet/-/chardet-0.7.0.tgz#90094849f0937f2eedc2425d0d28a9e5f0cbad9e"
   integrity sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==
+
+chart.js@3.5.1:
+  version "3.5.1"
+  resolved "https://registry.nlark.com/chart.js/download/chart.js-3.5.1.tgz#73e24d23a4134a70ccdb5e79a917f156b6f3644a"
+  integrity sha1-c+JNI6QTSnDM2155qRfxVrbzZEo=
 
 check-error@^1.0.2:
   version "1.0.2"
@@ -8898,6 +8919,11 @@ parse5-sax-parser@^6.0.1:
   integrity sha512-kXX+5S81lgESA0LsDuGjAlBybImAChYRMT+/uKCEXFBFOeEhS52qUCydGhU3qLRD8D9DVjaUo821WK7DM4iCeg==
   dependencies:
     parse5 "^6.0.1"
+
+parse5@^5.0.0:
+  version "5.1.1"
+  resolved "https://registry.nlark.com/parse5/download/parse5-5.1.1.tgz#f68e4e5ba1852ac2cadc00f4555fff6c2abb6178"
+  integrity sha1-9o5OW6GFKsLK3AD0VV//bCq7YXg=
 
 parse5@^6.0.1:
   version "6.0.1"
