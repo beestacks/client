@@ -35,9 +35,7 @@
               "node_modules/primeicons/primeicons.css",
               "node_modules/primeng/resources/themes/saga-blue/theme.css"
             ],
-            "scripts": [
-              "node_modules/chart.js/dist/Chart.js"
-            ],
+            "scripts": [],
             "customWebpackConfig": {
               "path": "./angular.webpack.js"
             }
