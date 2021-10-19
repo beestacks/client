@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ConfigService, ElectronService } from './core/services';
+import { ElectronService } from './core/services';
 import { TranslateService } from '@ngx-translate/core';
 import { APP_CONFIG } from '../environments/environment';
+import { ConfigService } from '@config';
 
 @Component({
   selector: 'app-root',
@@ -40,8 +41,5 @@ export class AppComponent implements OnInit {
     }
   }
 
-  ngOnInit() {
-    this.config.addIP('http://localhost:3000');
-    console.log(this.config.hosts);
-  }
+  ngOnInit() {}
 }

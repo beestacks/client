@@ -1,7 +1,6 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": ".",
     "outDir": "./dist/out-tsc",
     "module": "es2020",
     "sourceMap": true,
@@ -9,6 +8,7 @@
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
     "allowJs": true,
     "target": "es6",
     "typeRoots": [
@@ -21,9 +21,9 @@
       "dom"
     ],
     "paths": {
-      "@components": ["src/app/shared/components"],
-      "@config": ["src/app/core/services/client/config.service"],
-      "@interfaces": ["src/app/shared/interfaces"]
+      "@components": ["./src/app/shared/components"],
+      "@config": ["./src/app/config"],
+      "@interfaces": ["./src/app/shared/interfaces"]
     }
   },
   "angularCompilerOptions": {
