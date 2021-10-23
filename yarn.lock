@@ -1591,6 +1591,11 @@
   resolved "https://registry.npmjs.org/@gar/promisify/-/promisify-1.1.2.tgz#30aa825f11d438671d585bd44e7fd564535fc210"
   integrity sha512-82cpyJyKRoQoRi+14ibCeGPu0CwypgtBAdBhq1WfvagpCZNKqwXbKwXllYSMG91DhmG4jt9gN8eP6lGOtozuaw==
 
+"@graphql-typed-document-node/core@^3.1.0":
+  version "3.1.0"
+  resolved "https://registry.npm.taobao.org/@graphql-typed-document-node/core/download/@graphql-typed-document-node/core-3.1.0.tgz#0eee6373e11418bfe0b5638f654df7a4ca6a3950"
+  integrity sha1-Du5jc+EUGL/gtWOPZU33pMpqOVA=
+
 "@hapi/address@^4.0.1":
   version "4.1.0"
   resolved "https://registry.npmjs.org/@hapi/address/-/address-4.1.0.tgz#d60c5c0d930e77456fdcde2598e77302e2955e1d"
@@ -2804,6 +2809,16 @@ anymatch@~3.1.2:
   dependencies:
     normalize-path "^3.0.0"
     picomatch "^2.0.4"
+
+apollo-angular@2.6.0:
+  version "2.6.0"
+  resolved "https://registry.nlark.com/apollo-angular/download/apollo-angular-2.6.0.tgz#3c8d5732c91aeabe6566fda8db0155a6a1ddca17"
+  integrity sha1-PI1XMska6r5lZv2o2wFVpqHdyhc=
+  dependencies:
+    "@graphql-typed-document-node/core" "^3.1.0"
+    extract-files "^9.0.0"
+    semver "^7.0.0"
+    tslib "^2.0.0"
 
 app-builder-bin@3.7.1:
   version "3.7.1"
@@ -5662,6 +5677,11 @@ extglob@^2.0.4:
     regex-not "^1.0.0"
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
+
+extract-files@^9.0.0:
+  version "9.0.0"
+  resolved "https://registry.nlark.com/extract-files/download/extract-files-9.0.0.tgz?cache=0&sync_timestamp=1623398305005&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fextract-files%2Fdownload%2Fextract-files-9.0.0.tgz#8a7744f2437f81f5ed3250ed9f1550de902fe54a"
+  integrity sha1-indE8kN/gfXtMlDtnxVQ3pAv5Uo=
 
 extract-zip@^1.0.3:
   version "1.7.0"
