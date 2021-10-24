@@ -17,6 +17,10 @@ import { DetailModule } from './pages/detail/detail.module';
 
 import { AppComponent } from './app.component';
 import { DashboardModule } from './pages/dashboard/dashboard.module';
+import { APOLLO_OPTIONS } from 'apollo-angular';
+import { HttpLink } from 'apollo-angular/http';
+// 使用@apollo/client会导致错误，参考https://github.com/apollographql/apollo-client/issues/7005
+import { InMemoryCache } from '@apollo/client/core';
 
 // AoT requires an exported function for factories
 const httpLoaderFactory = (http: HttpClient): TranslateHttpLoader =>  new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -42,7 +46,18 @@ const httpLoaderFactory = (http: HttpClient): TranslateHttpLoader =>  new Transl
       }
     })
   ],
-  providers: [],
+  providers: [
+    {
+      provide: APOLLO_OPTIONS,
+      useFactory: (httpLink: HttpLink) => ({
+          cache: new InMemoryCache(),
+          link: httpLink.create({
+            uri: 'http://localhost:3000/graphql',
+          }),
+        }),
+      deps: [HttpLink],
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

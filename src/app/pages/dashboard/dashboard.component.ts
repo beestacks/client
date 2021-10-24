@@ -1,6 +1,7 @@
 import {ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation} from '@angular/core';
 import { ConfigService } from '@config';
 import {CompactType, GridsterConfig, GridsterItem, GridType} from 'angular-gridster2';
+import { Apollo, gql } from 'apollo-angular';
 
 
 @Component({
@@ -15,10 +16,21 @@ export class DashboardComponent implements OnInit {
   dashboard: Array<GridsterItem>;
 
   constructor(
+    private apollo: Apollo,
     private config: ConfigService
   ){}
 
   ngOnInit(): void {
+    this.apollo.query({
+      query: gql `{
+        memory {
+          available,
+          cached
+        }
+      }`
+    }).subscribe((res => {
+      console.log(res.data);
+    }));
     this.config.getTheme().then(console.log);
     this.options = {
       gridType: GridType.Fit,
