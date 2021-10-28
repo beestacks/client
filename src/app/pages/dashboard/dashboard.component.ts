@@ -55,16 +55,16 @@ export class DashboardComponent implements OnInit {
       .watchQuery({
         query: gql`
           {
-            memory {
-              used
-              total
+            memoryTimeSeries {
+              timestamp
+              usage
             }
           }
         `,
         pollInterval: 1000,
       })
       .valueChanges.subscribe((res: any) => {
-        this.memoryUsage = (res.data.memory.used / res.data.memory.total) * 100;
+        this.memoryUsage = res.data.memory.usage;
         this.queue.enqueue(this.memoryUsage);
         basicData.datasets[0].data = this.queue.data;
         console.log(basicData.datasets[0].data);
@@ -89,7 +89,7 @@ export class DashboardComponent implements OnInit {
     };
 
     this.dashboard = [
-      { cols: 1, rows: 1, y: 0, x: 0, data: basicData, options: basicOptions },
+      { cols: 3, rows: 2, y: 0, x: 0, data: basicData, options: basicOptions },
       { cols: 1, rows: 1, y: 0, x: 0 },
       { cols: 1, rows: 1, y: 0, x: 0 },
       { cols: 1, rows: 1, y: 0, x: 0 },
