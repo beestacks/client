@@ -1,5 +1,7 @@
 <gridster [options]="options">
   <gridster-item [item]="item" *ngFor="let item of dashboard">
-    <p-chart #chart width="100%" height="100%" type="line" [data]="item.data" [options]="item.options"></p-chart>
+    <ng-container>
+      <p-chart #chart width="100%" height="100%" type="line" [data]="item.data" [options]="item.options"></p-chart>
+    </ng-container>
   </gridster-item>
 </gridster>

@@ -4,9 +4,11 @@ import { CompactType, GridsterConfig, GridsterItem, GridType } from 'angular-gri
 import { Apollo, gql } from 'apollo-angular';
 import { UIChart } from 'primeng/chart';
 import { Queue } from '../../../libs';
+import { MemoryRes, MemoryTimeSeries } from '../../shared/interfaces/memory';
+import { DashboardState } from './dashboard-state.service';
 
 const basicData = {
-  labels: Array.from(new Array(60).keys()).reverse(),
+  labels: [],
   datasets: [
     {
       label: 'First Dataset',
@@ -27,6 +29,11 @@ const basicOptions = {
     },
   },
   scales: {
+    x: {
+      ticks: {
+          display: false
+      }
+    },
     y: {
       type: 'linear',
       grace: '5%',
@@ -45,30 +52,38 @@ export class DashboardComponent implements OnInit {
   @ViewChild('chart') chart: UIChart;
   options: GridsterConfig;
   dashboard: Array<GridsterItem>;
-  memoryUsage;
+  memoryUsage = [];
+  labels = [];
   queue = new Queue(60);
 
-  constructor(private apollo: Apollo, private config: ConfigService) {}
+  constructor(private apollo: Apollo, private config: ConfigService, private dashboardState: DashboardState) {}
 
   ngOnInit(): void {
     this.apollo
-      .watchQuery({
+      .watchQuery<MemoryRes>({
         query: gql`
-          {
-            memory {
-              used
-              total
+          query GetMemoryTimeSeries($from: Float!, $to: Float!){
+            memoryTimeSeries(from: $from, to: $to) {
+              timestamp
+              usage
             }
           }
         `,
+        variables: {
+          from: (() => (+new Date() - 6000))(),
+          to: (() => (+new Date()))()
+        },
         pollInterval: 1000,
       })
-      .valueChanges.subscribe((res: any) => {
-        this.memoryUsage = (res.data.memory.used / res.data.memory.total) * 100;
-        this.queue.enqueue(this.memoryUsage);
-        basicData.datasets[0].data = this.queue.data;
-        console.log(basicData.datasets[0].data);
-
+      .valueChanges.subscribe((res) => {
+        console.log(res.data.memoryTimeSeries);
+        this.labels.length = this.memoryUsage.length = 0;
+        res.data.memoryTimeSeries.map((data) => {
+          this.labels.push(data.timestamp);
+          this.memoryUsage.push(data.usage);
+        });
+        basicData.labels = this.labels;
+        basicData.datasets[0].data = this.memoryUsage;
         this.chart.refresh();
       });
     this.config.getTheme().then(console.log);
@@ -81,15 +96,15 @@ export class DashboardComponent implements OnInit {
       maxRows: 5,
       pushItems: true,
       draggable: {
-        enabled: true,
+        enabled: this.dashboardState.editMode,
       },
       resizable: {
-        enabled: true,
+        enabled: this.dashboardState.editMode,
       },
     };
 
     this.dashboard = [
-      { cols: 1, rows: 1, y: 0, x: 0, data: basicData, options: basicOptions },
+      { cols: 3, rows: 2, y: 0, x: 0, data: basicData, options: basicOptions },
       { cols: 1, rows: 1, y: 0, x: 0 },
       { cols: 1, rows: 1, y: 0, x: 0 },
       { cols: 1, rows: 1, y: 0, x: 0 },
