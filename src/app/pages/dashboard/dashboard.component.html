@@ -1,4 +1,12 @@
-<gridster [options]="options">
+<nav>
+  <button pButton pRipple type="button" label="编辑" class="p-button-raised p-button-secondary p-button-text"
+    (click)="edit()"
+  ></button>
+  <button pButton pRipple type="button" label="保存" class="p-button-raised p-button-secondary p-button-text"
+    (click)="save()"
+  ></button>
+</nav>
+<gridster *ngIf="refresh" [options]="options">
   <gridster-item [item]="item" *ngFor="let item of dashboard">
     <ng-container>
       <p-chart #chart width="100%" height="100%" type="line" [data]="item.data" [options]="item.options"></p-chart>

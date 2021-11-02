@@ -3,7 +3,6 @@
 #container {
   position: absolute;
   left: $sidebar_width;
-  top: $navbar_height;
   width: calc(100% - #{$sidebar_width});
-  height: calc(100% - #{$navbar_height});
+  height: 100%;
 }

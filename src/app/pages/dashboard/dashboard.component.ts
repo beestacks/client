@@ -1,13 +1,14 @@
-import { ChangeDetectionStrategy, Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, NgZone, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { ConfigService } from '@config';
 import { CompactType, GridsterConfig, GridsterItem, GridType } from 'angular-gridster2';
 import { Apollo, gql } from 'apollo-angular';
+import { ChartData, ChartOptions } from 'chart.js';
 import { UIChart } from 'primeng/chart';
 import { Queue } from '../../../libs';
 import { MemoryRes, MemoryTimeSeries } from '../../shared/interfaces/memory';
 import { DashboardState } from './dashboard-state.service';
 
-const basicData = {
+const basicData: ChartData = {
   labels: [],
   datasets: [
     {
@@ -20,7 +21,7 @@ const basicData = {
   ],
 };
 
-const basicOptions = {
+const basicOptions: ChartOptions<'line'> = {
   plugins: {
     legend: {
       labels: {
@@ -50,13 +51,34 @@ const basicOptions = {
 })
 export class DashboardComponent implements OnInit {
   @ViewChild('chart') chart: UIChart;
-  options: GridsterConfig;
+  public editMode = false;
+  public refresh = true;
+  options: GridsterConfig = {
+    gridType: GridType.Fit,
+    compactType: CompactType.None,
+    minCols: 5,
+    minRows: 5,
+    maxCols: 5,
+    maxRows: 5,
+    pushItems: true,
+    draggable: {
+      enabled: this.editMode,
+    },
+    resizable: {
+      enabled: this.editMode,
+    },
+  };
   dashboard: Array<GridsterItem>;
   memoryUsage = [];
   labels = [];
   queue = new Queue(60);
 
-  constructor(private apollo: Apollo, private config: ConfigService, private dashboardState: DashboardState) {}
+  constructor(
+    private apollo: Apollo,
+    private config: ConfigService,
+    private cd: ChangeDetectorRef,
+    private zone: NgZone
+  ) {}
 
   ngOnInit(): void {
     this.apollo
@@ -70,10 +92,9 @@ export class DashboardComponent implements OnInit {
           }
         `,
         variables: {
-          from: (() => (+new Date() - 6000))(),
-          to: (() => (+new Date()))()
-        },
-        pollInterval: 1000,
+          from: Date.now() - 6000,
+          to: Date.now()
+        }
       })
       .valueChanges.subscribe((res) => {
         console.log(res.data.memoryTimeSeries);
@@ -87,21 +108,6 @@ export class DashboardComponent implements OnInit {
         this.chart.refresh();
       });
     this.config.getTheme().then(console.log);
-    this.options = {
-      gridType: GridType.Fit,
-      compactType: CompactType.None,
-      minCols: 5,
-      minRows: 5,
-      maxCols: 5,
-      maxRows: 5,
-      pushItems: true,
-      draggable: {
-        enabled: this.dashboardState.editMode,
-      },
-      resizable: {
-        enabled: this.dashboardState.editMode,
-      },
-    };
 
     this.dashboard = [
       { cols: 3, rows: 2, y: 0, x: 0, data: basicData, options: basicOptions },
@@ -125,5 +131,23 @@ export class DashboardComponent implements OnInit {
 
   addItem(): void {
     this.dashboard.push({ x: 0, y: 0, cols: 1, rows: 1 });
+  }
+
+  edit() {
+    this.options.draggable.enabled = true;
+    this.options.resizable.enabled = true;
+    this.refresh = false;
+    this.cd.detectChanges();
+    this.refresh = true;
+    this.cd.detectChanges();
+  }
+
+  save() {
+    this.options.draggable.enabled = false;
+    this.options.resizable.enabled = false;
+    this.refresh = false;
+    this.cd.detectChanges();
+    this.refresh = true;
+    this.cd.detectChanges();
   }
 }
