@@ -12,6 +12,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ChartModule } from 'primeng/chart';
 import { GridsterModule } from 'angular-gridster2';
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   declarations: [PageNotFoundComponent, WebviewDirective, NavbarComponent, SidebarComponent],
@@ -27,6 +28,7 @@ import { GridsterModule } from 'angular-gridster2';
     SidebarComponent,
     DragDropModule,
     ChartModule,
+    ButtonModule,
     GridsterModule
   ],
 })
