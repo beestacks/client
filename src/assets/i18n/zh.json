@@ -1,5 +1,11 @@
 {
   "sidebar": {
     "dashboard": "仪表盘"
+  },
+  "server": {
+    "hostname": "主机名",
+    "os": "操作系统",
+    "ip": "IP",
+    "action": "操作"
   }
 }
