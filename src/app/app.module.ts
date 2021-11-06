@@ -21,6 +21,7 @@ import { APOLLO_OPTIONS } from 'apollo-angular';
 import { HttpLink } from 'apollo-angular/http';
 // 使用@apollo/client会导致错误，参考https://github.com/apollographql/apollo-client/issues/7005
 import { InMemoryCache } from '@apollo/client/core';
+import { ServersModule } from './pages/server/servers.module';
 
 // AoT requires an exported function for factories
 const httpLoaderFactory = (http: HttpClient): TranslateHttpLoader =>  new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -38,6 +39,7 @@ const httpLoaderFactory = (http: HttpClient): TranslateHttpLoader =>  new Transl
     DetailModule,
     AppRoutingModule,
     DashboardModule,
+    ServersModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

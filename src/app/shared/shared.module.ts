@@ -13,6 +13,28 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ChartModule } from 'primeng/chart';
 import { GridsterModule } from 'angular-gridster2';
 import { ButtonModule } from 'primeng/button';
+import { TableModule } from 'primeng/table';
+import { ProgressBarModule } from 'primeng/progressbar';
+import { DropdownModule } from 'primeng/dropdown';
+import { CalendarModule } from 'primeng/calendar';
+import {MultiSelectModule} from 'primeng/multiselect';
+import { DialogModule } from 'primeng/dialog';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ListboxModule } from 'primeng/listbox';
+import { RadioButtonModule } from 'primeng/radiobutton';
+import { PanelModule } from 'primeng/panel';
+import { AccordionModule } from 'primeng/accordion';
+import { TabViewModule } from 'primeng/tabview';
+import { FocusTrapModule } from 'primeng/focustrap';
+import { CheckboxModule } from 'primeng/checkbox';
+import { TreeTableModule } from 'primeng/treetable';
+import { TreeModule } from 'primeng/tree';
+import {SliderModule} from 'primeng/slider';
+import {ContextMenuModule} from 'primeng/contextmenu';
+import {ToastModule} from 'primeng/toast';
+import {InputTextModule} from 'primeng/inputtext';
+import { TagModule } from 'primeng/tag';
+import {BadgeModule} from 'primeng/badge';
 
 @NgModule({
   declarations: [PageNotFoundComponent, WebviewDirective, NavbarComponent, SidebarComponent],
@@ -29,7 +51,31 @@ import { ButtonModule } from 'primeng/button';
     DragDropModule,
     ChartModule,
     ButtonModule,
-    GridsterModule
+    GridsterModule,
+    TableModule,
+    ProgressBarModule,
+    DropdownModule,
+    CalendarModule,
+    MultiSelectModule,
+    DialogModule,
+    ConfirmDialogModule,
+    MenubarModule,
+    ListboxModule,
+    RadioButtonModule,
+    PanelModule,
+    AccordionModule,
+    TabViewModule,
+    FocusTrapModule,
+    CheckboxModule,
+    TreeTableModule,
+    TreeModule,
+		SliderModule,
+		ContextMenuModule,
+		ToastModule,
+    InputTextModule,
+    FormsModule,
+    TagModule,
+    BadgeModule
   ],
 })
 export class SharedModule {}

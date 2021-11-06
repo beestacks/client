@@ -5,6 +5,7 @@ import { PageNotFoundComponent } from './shared/components';
 import { HomeRoutingModule } from './pages/home/home.routing';
 import { DashboardRoutingModule } from './pages/dashboard/dashboard.routing';
 import { DetailRoutingModule } from './pages/detail/detail.routing';
+import { ServerRoutingModule } from './pages/server/servers.routing';
 
 const routes: Routes = [
   {
@@ -23,7 +24,8 @@ const routes: Routes = [
     RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy', useHash: true }),
     HomeRoutingModule,
     DashboardRoutingModule,
-    DetailRoutingModule
+    DetailRoutingModule,
+    ServerRoutingModule
   ],
   exports: [RouterModule]
 })

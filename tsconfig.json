@@ -22,6 +22,7 @@
       "esnext"
     ],
     "paths": {
+      "@shared": ["./src/app/shared"],
       "@components": ["./src/app/shared/components"],
       "@config": ["./src/app/config"],
       "@interfaces": ["./src/app/shared/interfaces"]

@@ -1,5 +1,18 @@
 {
   "sidebar": {
     "dashboard": "仪表盘"
+  },
+  "server": {
+    "hostname": "主机名",
+    "os": "操作系统",
+    "ip": "IP",
+    "action": "操作",
+    "tags": "标签",
+    "search": "请输入关键字",
+    "url": "URL",
+    "list": "服务器列表",
+    "listPageReport": "展示第 {first} 到 {last} 台服务器，共有 {totalRecords} 个服务器",
+    "add": "添加",
+    "addServer": "添加服务器"
   }
 }

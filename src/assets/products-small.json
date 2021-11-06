@@ -1,0 +1,84 @@
+{
+  "data": [
+  {
+    "id": 1000,
+    "hostname": "aaaaaaa",
+    "os": "ubuntu",
+    "url": "http://127.0.0.1:3000",
+    "tags": [
+      {
+        "color": "blue",
+        "value": "test"
+      },
+      {
+        "color": "indigo",
+        "value": "danger"
+      }
+    ]
+  },
+  {
+    "id": 1001,
+    "hostname": "bbbbbbb",
+    "os": "redhat",
+    "ip": "127.0.0.1",
+    "tags": [
+      {
+        "color": "purple",
+        "value": "test"
+      },
+      {
+        "color": "pink",
+        "value": "danger"
+      }
+    ]
+  },
+  {
+    "id": 1002,
+    "hostname": "cccccccc",
+    "os": "windows",
+    "ip": "127.0.0.1",
+    "tags": [
+      {
+        "color": "red",
+        "value": "test"
+      },
+      {
+        "color": "orange",
+        "value": "danger"
+      }
+    ]
+  },
+  {
+    "id": 1003,
+    "hostname": "what is this",
+    "os": "abcdefg",
+    "ip": "127.0.0.1",
+    "tags": [
+      {
+        "color": "yellow",
+        "value": "test"
+      },
+      {
+        "color": "green",
+        "value": "anger"
+      }
+    ]
+  },
+  {
+    "id": 1003,
+    "hostname": "what is this",
+    "os": "abcdefg",
+    "ip": "127.0.0.1",
+    "tags": [
+      {
+        "color": "teal",
+        "value": "test"
+      },
+      {
+        "color": "cyan",
+        "value": "这是一个标签"
+      }
+    ]
+  }
+]
+}

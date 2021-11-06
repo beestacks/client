@@ -3,13 +3,26 @@
     "dashboard": "Dashboard"
   },
   "PAGES": {
-      "HOME": {
-          "TITLE": "App works !",
-          "GO_TO_DETAIL": "Go to Detail"
-      },
-      "DETAIL": {
-        "TITLE": "Detail page !",
-        "BACK_TO_HOME": "Back to Home"
+    "HOME": {
+      "TITLE": "App works !",
+      "GO_TO_DETAIL": "Go to Detail"
+    },
+    "DETAIL": {
+      "TITLE": "Detail page !",
+      "BACK_TO_HOME": "Back to Home"
     }
+  },
+  "server": {
+    "hostname": "Host Name",
+    "os": "Operating System",
+    "ip": "IP",
+    "action": "Action",
+    "tags": "Tags",
+    "search": "Please enter key words",
+    "url": "URL",
+    "list": "Server List",
+    "listPageReport": "Showing {first} to {last} of {totalRecords} servers",
+    "add": "Add",
+    "addServer": "Add Server"
   }
 }
