@@ -26,18 +26,18 @@
       "@components": ["./src/app/shared/components"],
       "@config": ["./src/app/config"],
       "@interfaces": ["./src/app/shared/interfaces"]
-    },
-    "angularCompilerOptions": {
-      "strictTemplates": true,
-      "fullTemplateTypeCheck": true,
-      "annotateForClosureCompiler": true,
-      "strictInjectionParameters": true,
-      "skipTemplateCodegen": false,
-      "preserveWhitespaces": true,
-      "skipMetadataEmit": false,
-      "disableTypeScriptVersionCheck": true,
-      "enableI18nLegacyMessageIdFormat": false,
-      "strictInputAccessModifiers": true
     }
+  },
+  "angularCompilerOptions": {
+    "strictTemplates": true,
+    "fullTemplateTypeCheck": true,
+    "annotateForClosureCompiler": true,
+    "strictInjectionParameters": true,
+    "skipTemplateCodegen": false,
+    "preserveWhitespaces": true,
+    "skipMetadataEmit": false,
+    "disableTypeScriptVersionCheck": true,
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInputAccessModifiers": true
   }
 }
