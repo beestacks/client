@@ -33,6 +33,8 @@ import {SliderModule} from 'primeng/slider';
 import {ContextMenuModule} from 'primeng/contextmenu';
 import {ToastModule} from 'primeng/toast';
 import {InputTextModule} from 'primeng/inputtext';
+import { TagModule } from 'primeng/tag';
+import {BadgeModule} from 'primeng/badge';
 
 @NgModule({
   declarations: [PageNotFoundComponent, WebviewDirective, NavbarComponent, SidebarComponent],
@@ -71,7 +73,9 @@ import {InputTextModule} from 'primeng/inputtext';
 		ContextMenuModule,
 		ToastModule,
     InputTextModule,
-    FormsModule
+    FormsModule,
+    TagModule,
+    BadgeModule
   ],
 })
 export class SharedModule {}

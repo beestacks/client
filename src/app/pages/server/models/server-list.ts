@@ -1,10 +1,11 @@
 export interface Server {
-  ip: string;
+  id?: number;
   hostname: string;
-  port: number;
-  https: boolean;
-  os: 'windows' | 'ubuntu' | 'red hat' | 'debian' | 'others';
-  domain?: string;
+  os: 'windows' | 'ubuntu' | 'redhat' | 'debian' | 'others';
+  url: string;
   token?: string;
-  tags?: string[];
+  tags?: {
+    color: string;
+    value: string;
+  }[];
 }

@@ -16,6 +16,13 @@
     "hostname": "Host Name",
     "os": "Operating System",
     "ip": "IP",
-    "action": "Action"
+    "action": "Action",
+    "tags": "Tags",
+    "search": "Please enter key words",
+    "url": "URL",
+    "list": "Server List",
+    "listPageReport": "Showing {first} to {last} of {totalRecords} servers",
+    "add": "Add",
+    "addServer": "Add Server"
   }
 }

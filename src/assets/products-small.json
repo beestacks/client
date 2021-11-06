@@ -4,53 +4,81 @@
     "id": 1000,
     "hostname": "aaaaaaa",
     "os": "ubuntu",
-    "company": "Benton, John B Jr",
-    "date": "2015-09-13",
-    "status": "unqualified",
-    "activity": 17,
-    "representative": {
-      "name": "Ioni Bowcher",
-      "image": "ionibowcher.png"
-    }
+    "url": "http://127.0.0.1:3000",
+    "tags": [
+      {
+        "color": "blue",
+        "value": "test"
+      },
+      {
+        "color": "indigo",
+        "value": "danger"
+      }
+    ]
   },
   {
     "id": 1001,
     "hostname": "bbbbbbb",
     "os": "redhat",
-    "company": "Chanay, Jeffrey A Esq",
-    "date": "2019-02-09",
-    "status": "proposal",
-    "activity": 0,
-    "representative": {
-      "name": "Amy Elsner",
-      "image": "amyelsner.png"
-    }
+    "ip": "127.0.0.1",
+    "tags": [
+      {
+        "color": "purple",
+        "value": "test"
+      },
+      {
+        "color": "pink",
+        "value": "danger"
+      }
+    ]
   },
   {
     "id": 1002,
     "hostname": "cccccccc",
     "os": "windows",
-    "company": "Chemel, James L Cpa",
-    "date": "2017-05-13",
-    "status": "qualified",
-    "activity": 63,
-    "representative": {
-      "name": "Asiya Javayant",
-      "image": "asiyajavayant.png"
-    }
+    "ip": "127.0.0.1",
+    "tags": [
+      {
+        "color": "red",
+        "value": "test"
+      },
+      {
+        "color": "orange",
+        "value": "danger"
+      }
+    ]
   },
   {
     "id": 1003,
     "hostname": "what is this",
     "os": "abcdefg",
-    "company": "Feltz Printing Service",
-    "date": "2020-09-15",
-    "status": "new",
-    "activity": 37,
-    "representative": {
-      "name": "Xuxue Feng",
-      "image": "xuxuefeng.png"
-    }
+    "ip": "127.0.0.1",
+    "tags": [
+      {
+        "color": "yellow",
+        "value": "test"
+      },
+      {
+        "color": "green",
+        "value": "anger"
+      }
+    ]
+  },
+  {
+    "id": 1003,
+    "hostname": "what is this",
+    "os": "abcdefg",
+    "ip": "127.0.0.1",
+    "tags": [
+      {
+        "color": "teal",
+        "value": "test"
+      },
+      {
+        "color": "cyan",
+        "value": "这是一个标签"
+      }
+    ]
   }
 ]
 }
