@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import localforage from 'localforage';
+import { v4 } from 'uuid';
 import { Server } from '../models';
 
 @Injectable()
@@ -14,13 +15,19 @@ export class ServerStorage {
     return list;
   }
 
-  addServers(server: Server) {
+  addServer(server: Server) {
     this.getServers().then((list) => {
       if (!Array.isArray(list)) {
         list = [];
       }
-      server.id = list.length;
+      server.id = v4();
       this.serverForage.setItem('list', [...list, server]);
+    });
+  }
+
+  deleteServer(id: string) {
+    this.getServers().then((list) => {
+      this.serverForage.setItem('list', list.filter((server) => server.id !== id));
     });
   }
 }

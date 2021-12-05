@@ -30,7 +30,11 @@ export class ServerListComponent implements OnInit {
   }
 
   confirmAddSheet() {
-    this.serverStorage.addServers(this.serverState);
+    this.serverStorage.addServer(this.serverState);
     this.displayAddSheet = false;
+  }
+
+  delete(id: string) {
+    this.serverStorage.deleteServer(id);
   }
 }

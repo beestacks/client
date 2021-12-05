@@ -1,27 +1,11 @@
 {
   "name": "beestack-client",
   "version": "0.0.0-alpha",
-  "description": "BeeStack Client",
-  "homepage": "https://github.com/Amoyens1s/BeeStack-Client",
-  "author": {
-    "name": "Amoyens1s",
-    "email": "amoyensis@outlook.com"
-  },
-  "keywords": [
-    "angular",
-    "angular 12",
-    "electron",
-    "nodejs",
-    "typescript",
-    "spectron",
-    "eslint",
-    "sass",
-    "windows",
-    "mac",
-    "linux"
-  ],
+  "description": "",
+  "author": "amoyensis",
+  "private": false,
+  "license": "GPL-3.0",
   "main": "app/main.js",
-  "private": true,
   "scripts": {
     "postinstall": "electron-builder install-app-deps",
     "ng": "ng",
@@ -53,6 +37,7 @@
     "@angular/router": "12.1.2",
     "@apollo/client": "3.4.16",
     "@electron/remote": "1.2.0",
+    "@types/uuid": "8.3.1",
     "angular-gridster2": "12.1.1",
     "animate.css": "4.1.1",
     "apollo-angular": "2.6.0",
