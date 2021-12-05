@@ -1,5 +1,5 @@
 export interface Server {
-  id?: number;
+  id?: string;
   hostname: string;
   os: 'windows' | 'ubuntu' | 'redhat' | 'debian' | 'others';
   url: string;
